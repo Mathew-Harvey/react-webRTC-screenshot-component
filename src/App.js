@@ -1,5 +1,15 @@
+import React from 'react';
+import VideoPlayer from './videoPlayer';
+
+
+
 function App() {
-  return null
+  return (
+    <>
+      <VideoPlayer />
+
+    </>
+  )
 }
 
 export default App;
