@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function videoPlayer() {
+export default function screenCapture() {
     return (
         <div>
             
@@ -11,12 +11,11 @@ export default function videoPlayer() {
                 <button id="screenshot-button"> Screen Shot </button>
                 <img id="screenshot-img" src="" alt=""></img>
                 <canvas id="canvas"></canvas>
-                <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
-                <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-                <script>
+       
+               <script>
+                   
                 </script>
             </>
         </div>
     )
 }
-

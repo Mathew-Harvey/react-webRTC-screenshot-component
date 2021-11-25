@@ -1,12 +1,18 @@
-import React from 'react';
-import VideoPlayer from './videoPlayer';
+import React, { useState } from 'react';
+import OemPlayer from './oemPlayer';
+import ScreenCapture from './screenCapture';
+import InputSrc from './inputSrc';
+import WebCamVideo from './webCamVideo';
 
 
 
 function App() {
   return (
     <>
-      <VideoPlayer />
+      <InputSrc />
+      <OemPlayer />
+      <WebCamVideo />
+      <ScreenCapture />
 
     </>
   )
