@@ -19,8 +19,8 @@ export default function WebCamVideo() {
     };
 
     const takePhoto = () => {
-        const width = 414
-        const height = width / (16/9);
+        const width = 300;
+        const height = 200;
 
         let video = videoRef.current;
         let photo = photoRef.current;
@@ -29,7 +29,7 @@ export default function WebCamVideo() {
         photo.heigh = height;
 
         let ctx = photo.getContext('2d');
-        ctx.drawImage(video, 0, 0,width, height);
+        ctx.drawImage(video, 0, 0, width, height);
         setHasPhoto(true);
     }
 

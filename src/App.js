@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import OemPlayer from './oemPlayer';
-import ScreenCapture from './screenCapture';
-
 import WebCamVideo from './webCamVideo';
 
 
 
 function App() {
-  const [showOem, setShowOEM] = useState(true)
-    const [showWebCam, setShowWebCam] = useState(true)
+  const [showOem, setShowOEM] = useState(false)
+    const [showWebCam, setShowWebCam] = useState(false)
   return (
     <>
      {
                 showOem ? 
-                <p><OemPlayer /></p>
+                <div><OemPlayer /></div>
                 : null
             }
             {
                 showWebCam ? 
-              <p><WebCamVideo /></p>
+              <div><WebCamVideo /></div>
                 : null
             }
 
@@ -26,7 +24,7 @@ function App() {
             <button id="inputSrc" onClick={() => setShowWebCam(!showWebCam)}> Webcam toggle</button>
       
       
-      <ScreenCapture />
+ 
 
     </>
   )
