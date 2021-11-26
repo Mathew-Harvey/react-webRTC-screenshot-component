@@ -7,7 +7,7 @@ export default function WebCamVideo() {
 
     const getWebCamVideo = () => {
       navigator.mediaDevices
-        .getUserMedia({ video: { width: 300 } })
+        .getUserMedia({ video: { width: 600 } })
         .then(stream => {
           let video = videoRef.current;
           video.srcObject = stream;
@@ -19,11 +19,11 @@ export default function WebCamVideo() {
     };
 
     const takePhoto = () => {
-        const width = 300;
-        const height = 200;
+        const width = 600;
+        const height = 450;
 
-        let video = videoRef.current;
-        let photo = photoRef.current;
+        const video = videoRef.current;
+        const photo = photoRef.current;
 
         photo.width = width;
         photo.heigh = height;
@@ -36,7 +36,7 @@ export default function WebCamVideo() {
     const closePhoto = () => {
         let photo = photoRef.current
         let ctx = photo.getContext('2d');
-         ctx.clearRect(0, 0, photo.width, photo.height)
+        ctx.clearRect(0, 0, photo.width, photo.height);
         setHasPhoto(false);
     }
 
@@ -50,12 +50,16 @@ export default function WebCamVideo() {
       
             <video ref={videoRef} />
             <button onClick={takePhoto}>Screenshot</button>
-          </div>
-          <div className={"result" + (hasPhoto ? "hasPhoto" : " ")}>
-              <canvas ref={photoRef}></canvas>
+          </div> 
+          <div>
               <button onClick={closePhoto}>Close</button>
+              </div>
+          <div className={"result" + (hasPhoto ? "hasPhoto" : "")}>
+              <canvas ref={photoRef}></canvas>
+              </div>
+             
           </div>
 
-        </div>
+        
       );
 }

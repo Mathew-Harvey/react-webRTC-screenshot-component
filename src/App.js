@@ -9,19 +9,20 @@ function App() {
     const [showWebCam, setShowWebCam] = useState(false)
   return (
     <>
+                <button id="inputSrc" onClick={() => setShowOEM(!showOem)}> External Camera toggle</button>
+            <button id="inputSrc" onClick={() => setShowWebCam(!showWebCam)}> Webcam toggle</button>
      {
                 showOem ? 
-                <div><OemPlayer /></div>
+                <OemPlayer />
                 : null
             }
             {
                 showWebCam ? 
-              <div><WebCamVideo /></div>
+              <WebCamVideo />
                 : null
             }
 
-            <button id="inputSrc" onClick={() => setShowOEM(!showOem)}> External Camera toggle</button>
-            <button id="inputSrc" onClick={() => setShowWebCam(!showWebCam)}> Webcam toggle</button>
+
       
       
  

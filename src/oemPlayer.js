@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import OvenPlayer from 'ovenplayer';
 
-
-
-
 export default function OemPlayer(title) {
 
     const videoRef = useRef(null)
@@ -32,22 +29,22 @@ export default function OemPlayer(title) {
 
     const takePhoto = () => {
         const width = 600;
-        const height = 500;
+        const height = 450;
 
         const video = getVideo("op-media-element-container")
-        let photo = photoRef.current
+        const photo = photoRef.current;
 
         photo.width = width;
         photo.height = height;
 
         let ctx = photo.getContext('2d');
-        ctx.drawImage(video, 0, 0, width, height)
-        setHasPhoto(true)
+        ctx.drawImage(video, 0, 0, width, height);
+        setHasPhoto(false);
     }
     const closePhoto = () => {
         let photo = photoRef.current
         let ctx = photo.getContext('2d');
-         ctx.clearRect(0, 0, photo.width, photo.height)
+        ctx.clearRect(0, 0, photo.width, photo.height);
         setHasPhoto(false);
     }
     useEffect(() => {
@@ -57,7 +54,6 @@ export default function OemPlayer(title) {
     return (
         <div>
             <div>
-
                 <div id="oemPlayer"></div>
                 <button onClick={takePhoto}>Screenshot</button>
             </div>
