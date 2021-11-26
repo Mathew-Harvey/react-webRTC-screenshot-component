@@ -26,7 +26,7 @@ export default function WebCamVideo() {
         const photo = photoRef.current;
 
         photo.width = width;
-        photo.heigh = height;
+        photo.height = height;
 
         let ctx = photo.getContext('2d');
         ctx.drawImage(video, 0, 0, width, height);

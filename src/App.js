@@ -4,31 +4,24 @@ import WebCamVideo from './webCamVideo';
 
 
 
-function App() {
+export default function App() {
   const [showOem, setShowOEM] = useState(false)
-    const [showWebCam, setShowWebCam] = useState(false)
+  const [showWebCam, setShowWebCam] = useState(false)
   return (
     <>
-                <button id="inputSrc" onClick={() => setShowOEM(!showOem)}> External Camera toggle</button>
-            <button id="inputSrc" onClick={() => setShowWebCam(!showWebCam)}> Webcam toggle</button>
-     {
-                showOem ? 
-                <OemPlayer />
-                : null
-            }
-            {
-                showWebCam ? 
-              <WebCamVideo />
-                : null
-            }
-
-
-      
-      
- 
-
+      <button id="inputSrc" onClick={() => setShowOEM(!showOem)}> External Camera toggle</button>
+      <button id="inputSrc" onClick={() => setShowWebCam(!showWebCam)}> Webcam toggle</button>
+      {
+        showOem ?
+          <OemPlayer />
+          : null
+      }
+      {
+        showWebCam ?
+          <WebCamVideo />
+          : null
+      }
     </>
   )
 }
 
-export default App;
